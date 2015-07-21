@@ -1,0 +1,45 @@
+<?php
+/**
+* Global predefined variable for .install and .module
+*/
+define('DRUPAL_EOL_REDIRECTOR_404_PATH', 'eol_redirector/404');
+
+/**
+* hook_menu for page callback eol_redirector()
+*/
+function eol_redirector_menu() {
+  $site_404 = variable_get('site_404');
+  $items[$site_404] = array(
+  'title'            => t('Hello world'),
+  'page callback' => 'eol_redirector',
+  'access arguments' => array('access content'),
+  );
+  return $items;
+}
+function eol_redirector() {
+  //issue: drupal_goto gets stuck in an redirect loop
+  //drupal_goto("https://www.elance.com/php/search/main/404.php");
+  header("Location: https://www.elance.com/php/search/main/404.php");
+  exit;
+}
+
+/**
+* Prevents updates to 404 path in admin, verifies and updates if necessary on all content(cached and uncached pages)
+*/
+function eol_redirector_boot(){
+  //variable_del('site_404');
+  //variable_set('site_404', DRUPAL_EOL_REDIRECTOR_404_PATH);
+  $menu_404_path = 'eol_redirector/404';
+  $site_404 = variable_get('site_404');
+  if(  !isset($site_404) ||  $site_404 != $menu_404_path ) {
+    variable_del('site_404');
+    variable_set('site_404', $menu_404_path);
+    $site_404 = variable_get('site_404');
+  }  
+}
+/**
+* (uncached pages)
+*/
+function eol_redirector_init(){
+
+}
