@@ -1,6 +1,6 @@
-977a 1 775094 e560ce4f7b1
+27a9 1 54a9bb 890622768ee
 description = Redirect users to external/internal urls from menu links specified in this module.  Enforces custom module defined site-information 404 menu path
 files[] = eol_redirector.module
-5f748ee 5 8a606645bc3dc5b41cd974
+d997ad3 c ba97c0df0f9d2667742f85
 
 core = 7.x

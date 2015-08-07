@@ -1,13 +1,13 @@
-65e342
+1a971a
 /**
 * Set site_404 system variable
-0b5
+8bf
 function eol_redirector_install() {
   variable_set('site_404', DRUPAL_EOL_REDIRECTOR_404_PATH);
-f9
+c9
 /**
 * Unset site_404 system variable: set to blank/default drupal 404
-3be
+8d8
 function eol_redirector_uninstall() {
   variable_del('site_404');
-55
+
