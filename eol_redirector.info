@@ -1,5 +1,0 @@
-name = Elance Redirector
-description = Redirect users to external/internal urls from menu links specified in this module.  Enforces custom module defined site-information 404 menu path
-files[] = eol_redirector.module
-files[] = eol_redirector.install
-core = 7.x
