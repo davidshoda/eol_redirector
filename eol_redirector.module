@@ -1,55 +1,51 @@
-03380c
+539cc1
 /**
 * Global predefined variable for .install and .module
-172
+23f
 define('DRUPAL_EOL_REDIRECTOR_404_PATH', 'eol_redirector/404');
 
-d42e
+2389
 * hook_menu for page callback eol_redirector()
 */
-e85b9ded 84b739d4d21934009ec44 4
+f037e330 7341f6e138772d719a6d4 4
 
   $site_404 = variable_get('site_404');
-  27fe75cf0590bdc4d 1 16e294c
-  1f60457            2f 6e0b3cc8 ca1f60457
+  $items[$site_404] = array(
+  074d60f            c5 8df57de2 b7074d60f
   'page callback' => 'eol_redirector',
-  86307f0 48f2c97674 07 2ca9f597
-a986 07f0448f2c9
-  436
+  'access arguments' => array('access content'),
+  a41
   return $items;
-45
-50e269f1 449a92efa043b3db c2
+}
+75095d15 7d68ce947a882dd5 b1
   //issue: drupal_goto gets stuck in an redirect loop
-  f88f77cf26d35691baba1797e90acf
-b3f88f77cf26d35691baba1797e90acf
-b
-  6809644635c81c64c f08ae2a7ee5e
-3c6809644635c81c64c1f08ae2a7ee5e
-e79c
+  //drupal_goto("https://www.elance.com/php/search/main/404.php");
+  1c1294b2197182462 cb86abc15247
+501c1294b21971824620cb86abc15247
+501c
   exit;
 }
-d
+4
 /**
 * Prevents updates to 404 path in admin, verifies and updates if necessary on all content(cached and uncached pages)
-2ba
+ab6
 function eol_redirector_boot(){
   //variable_del('site_404');
-  15a9436ad2787d726277100105 ae1
-df61f946d659944fd41f5cf0017f1
+  a02f919a2ca2c130e5bc33e4aa 883
+d1a02f919a2ca2c130e5bc33e4aa5
   $menu_404_path = 'eol_redirector/404';
-  d5efbcf2c c 27a96462a310a30bdf
-3dd5efb
-  f1d  1eea260b823de5ea2 d4  820
-81f1d 71 ea260b823de5ea a 49
-    90c807f244b749d5cd929ff71a
+  $site_404 = variable_get('site_404');
+  c10  585a853adf04fbb36 67  17d
+95c10 25 5a853adf04fbb3 2 7d
+    variable_del('site_404');
     variable_set('site_404', $menu_404_path);
-    0ffb84d91 8 ea577b836960947c
-6995dd7cc
+    b2074823c c a49b77538632a810
+38bbb2074
   }  
 }
-1533
+4d0a
 * (uncached pages)
 */
-06c27730 f35aa2860a06051ce53ce02
+3c333f46 633581ac55fefff6b56a468
 
 }
