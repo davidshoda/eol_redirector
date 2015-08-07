@@ -1,5 +1,6 @@
-name = Elance Redirector
+977a 1 775094 e560ce4f7b1
 description = Redirect users to external/internal urls from menu links specified in this module.  Enforces custom module defined site-information 404 menu path
 files[] = eol_redirector.module
-files[] = eol_redirector.install
+5f748ee 5 8a606645bc3dc5b41cd974
+
 core = 7.x
